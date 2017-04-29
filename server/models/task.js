@@ -7,4 +7,4 @@ const schema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('tasks', schema);  
+module.exports = mongoose.model('tasks', schema);

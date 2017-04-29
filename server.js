@@ -14,22 +14,16 @@ const api = require('./server/routes/task');
 const app = express();
 
 //Parsers for POST data
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/api', require('./server/routes/task'));
 
-app.get('*', (req, res)=> {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
-
-
 /**
 * Get port from enviornment and store in Express
 */
-
 
 const port = process.env.PORT || '3000';
 app.set('port', port);
